@@ -179,7 +179,7 @@
   #randomTile p {
       color: #e2d7d7;
       margin-top: 0.3em;
-      font-size: 1.9em;
+      font-size: 1.5em;
       font-weight: bold;
     }
   </style>
@@ -187,7 +187,7 @@
 <body>
   <header>
     <h1>静岡大学 藤原研究室</h1>
-    <p>のんびり気ままな私たちの研究室の紹介</p>
+    <p>のんびり気ままな<br>私たちの研究室紹介</p>
     <p>ようこそ藤原雀荘へ</p>
   </header>
 
@@ -199,12 +199,12 @@
   <section id="research">
     <h2>どんな研究室？</h2>
     <p>
-      ここは 静岡大学 藤原研究室　通称：とかないです<br>
+      ここは 静岡大学 藤原研究室<br>通称：とかないです<br>
       名前はちょっと固いですが、メンバーはみんなゆるく生きてます。
       </p>
       
       <p>
-      主な研究テーマは「硝化」——つまり、微生物がアンモニアを硝酸に変えていく化学反応のその周辺について研究しています。<br>
+      主な研究テーマは「硝化」<br>つまり、微生物がアンモニアを硝酸に変えていく化学反応のその周辺について研究しています。<br>
       地味？いいえ、環境科学の大事なピースですたぶん。
       </p>
       
@@ -292,7 +292,7 @@
       const tileDiv = document.getElementById("randomTile");
       const randomIndex = Math.floor(Math.random() * tileList.length);
       const tile = tileList[randomIndex];
-      tileDiv.innerHTML = `<img src="${tile}" alt="牌"><p>これがあなたのラッキー牌です！</p>`;
+      tileDiv.innerHTML = `<img src="${tile}" alt="牌"><p>これが<br>あなたの<br>ラッキー牌です！</p>`;
       tileDiv.style.display = "block";
       const lightning = document.getElementById("lightning");
   lightning.style.display = "block"; 
