@@ -142,6 +142,19 @@
       font-size: 1.2em;
       font-weight: bold;
     }
+    .tenbou {
+  position: fixed;
+  width: 80px;
+  height: auto;
+  z-index: 9000;
+  pointer-events: none;
+  animation: fall 2.5s linear forwards;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
   </style>
 </head>
 <body>
@@ -291,8 +304,26 @@
       setTimeout(() => {
         effect.style.display = "none";
         showRandomTile();
+        rainTenbou();
       }, 3000);
     }
+    const tenbouImages = ["100bo.png", "1000bo.png", "5000bo.png", "10000bo.png"];
+
+function rainTenbou(count = 20) {
+  for (let i = 0; i < count; i++) {
+    const img = document.createElement("img");
+    img.src = tenbouImages[Math.floor(Math.random() * tenbouImages.length)];
+    img.className = "tenbou";
+    img.style.left = Math.random() * 100 + "vw";
+    img.style.top = "-50px";
+    img.style.transform = `rotate(${Math.random() * 360}deg)`;
+    document.body.appendChild(img);
+
+    setTimeout(() => {
+      img.remove();
+    }, 3000);
+  }
+}
   </script>
 </body>
 </html>
