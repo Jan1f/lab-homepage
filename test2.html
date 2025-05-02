@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>静岡大学 藤原研究室</title>
+  <style>
+    body {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+      font-family: "游ゴシック", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      background-color: #116530;
+      background-image: url("tile-bg.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+      margin: 0;
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+
+    header {
+      background: #8B0000;
+      color: #fff5e0;
+      padding: 1em 2em;
+      text-align: center;
+      border-bottom: 6px solid gold;
+    }
+
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      padding: 0.5em;
+      border-bottom: 2px solid #c0a060;
+    }
+
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    h1, h2, h3 {
+        font-weight: bold;
+  color: #ffffcc; 
+  text-shadow: 1px 1px 3px #00000099;
+    }
+
+    p {
+        font-weight: 500;
+        color: #fefefe;
+    }
+
+    .members img, .professor-photo, .group-photo {
+      max-width: 150px;
+      height: auto;
+      margin: 1em;
+      border-radius: 4px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 5px #000;
+    }
+
+    footer {
+      background: #1b1b1b;
+      color: #aaa;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+      font-size: 0.9em;
+    }
+
+    #ronEffect {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      font-size: 6em;
+      font-weight: bold;
+      color: red;
+      text-shadow: 2px 2px 10px yellow;
+      display: none;
+      z-index: 10000;
+      animation: ronZoom 3s ease-out forwards;
+    }
+
+    @keyframes ronZoom {
+      0%   { transform: translate(-50%, -50%) scale(0.2); opacity: 0; }
+      30%  { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    }
+
+    #flashOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 0, 0, 0.5);
+      display: none;
+      z-index: 9998;
+    }
+
+    #lightning {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    @keyframes flashLightning {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    #randomTile {
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10001;
+      display: none;
+      text-align: center;
+    }
+
+    #randomTile img {
+      width: 100px;
+      height: auto;
+      box-shadow: 0 0 10px white;
+    }
+
+    #randomTile p {
+      color: #fff8dc;
+      margin-top: 0.5em;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>静岡大学 藤原研究室</h1>
+    <p>のんびり気ままな私たちの研究室の紹介</p>
+    <p>ようこそ藤原雀荘へ</p>
+  </header>
+
+  <nav>
+    <a href="#research">どんな研究室？</a>
+    <a href="#members">メンツ</a>
+    <a href="#location">所在地・問い合わせ</a>
+  </nav>
+  <section id="research">
+    <h2>どんな研究室？</h2>
+    <p>
+      ここは 静岡大学 藤原研究室（通称：とか無いです　<br>
+      名前はちょっと固いですが、メンバーはみんなゆるく生きてます。
+      </p>
+      
+      <p>
+      主な研究テーマは「硝化」——つまり、微生物がアンモニアを硝酸に変えていく化学反応のその周辺について研究しています。<br>
+      地味？いいえ、環境科学の大事なピースですたぶん。
+      </p>
+      
+      <p>
+      メンバーは教授と学生2人の計3人。<br>
+      全員、<strong>麻雀が好き</strong>。でも3人しかいないから、どんなに頑張っても三人麻雀しかできません。二萬から八萬？何それ怖い…<br>
+      4人目の神が現れる日を、硝化細菌とともに待ちわびています。
+      </p>
+      
+      <p>
+      このページはあくまで<strong>仮説的に存在しているホームページ</strong>です。<br>
+      そのうち消えるかもしれないし、教授が突然デザインを変えるかもしれません。<br>
+      でも今日見てくれたあなたとは、一期一会のご縁です。ごゆるりとどうぞ。
+      </p>
+  </section>
+
+  <section id="members">
+    <h2>メンツ</h2>
+    <h3>教授</h3>
+    <img src="professor.jpg" alt="教授の写真" class="professor-photo">
+    <p>藤原先生<br>メール: fujiwara.taketomo@shizuoka.ac.jp</p>
+    <p>好きな役：立直(先生渋すぎますって...)<p>
+    <p>好きなもの：ネコ,ちょうちょ<p>
+    </p>
+
+    <h3>2人の麻雀戦士</h3>
+    <div class="members">
+      <img src="student1.jpg" alt="学生1">
+      <p>横田蓮<br>メール:yokota.ren.0912@gmail.com</p>
+      <p>通称：居室ヒキニート　よく学校に泊まっている。 
+      <p>インスタグラム:orengeren.y<p>
+        <p>好きな役:混一色。あとよく鳴く<p>
+      <img src="student2.jpg" alt="学生2">
+      <p>林田大河<br>メール: </p>
+      <p>インスタグラム:rindaman_0105<p>
+      <p>通称：ウンチマン、ウンチがとても長い
+        <p>好きな役：純正九蓮宝燈、アガれるわけねぇだろダボが<p></p>
+        <!-- 必要に応じて追加 -->
+
+  </section>
+
+  <section id="location">
+    <h2>所在地・問い合わせ</h2>
+    <p>〒422-8017 静岡県静岡市駿河区大谷836<br>静岡大学 理学部　総合研究棟 6階　藤原研究室</p>
+    <p>藤原先生のメールアドレス：fujiwara.taketomo@shizuoka.ac.jp</p>
+    <p>興味あったらとにかく研究室に来ればいいんだ！多分いるから勝手に入っていいよ！</p>
+  </section>
+  <section id="members">
+    <h3>おまけ</h3>
+    <button onclick="playRon()" style="font-size: 1.2em; padding: 0.5em 1em; background: darkred; color: white; border: none; border-radius: 8px; cursor: pointer;">
+      ロン！🀄
+    </button>
+    <audio id="ronSound" src="ron.mp3"></audio>
+    <audio id="thunderSound" src="爆発2.mp3"></audio>
+    <div id="flashOverlay"></div>
+    <img id="lightning" src="lightning.png" alt="稲妻">
+    <div id="ronEffect">ロン！！</div>
+    <div id="randomTile"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 静岡大学 藤原研究室</p>
+  </footer>
+
+  <script>
+    const tileList = [];
+    for (let i = 1; i <= 9; i++) {
+      tileList.push(`m${i}.png`, `p${i}.png`, `s${i}.png`);
+    }
+    tileList.push(
+      "am5.png",
+      "ap5.png",
+      "as5.png",
+      "tyu.png",
+      "hat.png",
+      "hak.png",
+      "pe.png",
+      "sy.png",
+      "na.png",
+      "to.png",
+      "b.png"
+    );
+
+    function showRandomTile() {
+      const tileDiv = document.getElementById("randomTile");
+      const randomIndex = Math.floor(Math.random() * tileList.length);
+      const tile = tileList[randomIndex];
+      tileDiv.innerHTML = `<img src="${tile}" alt="牌"><p>これがあなたのラッキー牌です！</p>`;
+      tileDiv.style.display = "block";
+      setTimeout(() => {
+        tileDiv.style.display = "none";
+      }, 8000);
+    }
+
+    function playRon() {
+      const ronSound = document.getElementById("ronSound");
+      const thunderSound = document.getElementById("thunderSound");
+      const effect = document.getElementById("ronEffect");
+      const flash = document.getElementById("flashOverlay");
+      const lightning = document.getElementById("lightning");
+
+      ronSound.currentTime = 0;
+      ronSound.play();
+
+      thunderSound.currentTime = 0;
+      thunderSound.play();
+
+      flash.style.display = "block";
+      setTimeout(() => {
+        flash.style.display = "none";
+      }, 300);
+
+      lightning.style.display = "block";
+      lightning.style.animation = "flashLightning 3s ease-out";
+      setTimeout(() => {
+        lightning.style.display = "none";
+      }, 3000);
+
+      effect.style.display = "block";
+      effect.style.animation = "none";
+      void effect.offsetWidth;
+      effect.style.animation = "ronZoom 3s ease-out forwards";
+
+      setTimeout(() => {
+        effect.style.display = "none";
+        showRandomTile();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
