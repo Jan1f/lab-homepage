@@ -9,7 +9,7 @@
     padding-left: 1.5em;
     padding-right: 1.5em;
       font-family: "游ゴシック", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-      background-color: #116530;
+      background-color: #203126;
       background-image: url("tile-bg.png");
       background-size: cover;
       background-repeat: no-repeat;
@@ -50,8 +50,12 @@
     }
 
     p {
-        font-weight: 500;
-        color: #fefefe;
+      font-size: 1.1em;
+  font-weight: 500;
+  color: #fefefe;
+  background-color: rgba(4, 43, 13, 0.274);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
     }
 
     .members img, .professor-photo, .group-photo {
@@ -137,9 +141,9 @@
     }
 
     #randomTile p {
-      color: #fff8dc;
+      color: #e4e4dc;
       margin-top: 0.5em;
-      font-size: 1.2em;
+      font-size: 2.2em;
       font-weight: bold;
     }
     .tenbou {
@@ -155,6 +159,29 @@
   0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
   100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
 }
+@media screen and (max-width: 600px) {
+  #ronEffect {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+  nav a {
+    font-size: 0.7em;
+    padding: 0.3em 0.5em;
+  }
+  #randomTile p {
+      color: #e2d7d7;
+      margin-top: 0.3em;
+      font-size: 1.9em;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -172,7 +199,7 @@
   <section id="research">
     <h2>どんな研究室？</h2>
     <p>
-      ここは 静岡大学 藤原研究室（通称：とか無いです　<br>
+      ここは 静岡大学 藤原研究室　通称：とかないです<br>
       名前はちょっと固いですが、メンバーはみんなゆるく生きてます。
       </p>
       
@@ -188,7 +215,7 @@
       </p>
       
       <p>
-      このページはあくまで<strong>仮説的に存在しているホームページ</strong>です。<br>
+      このページはあくまで縦コンの為に<mark>仮設的に存在しているホームページ</mark>です。<br>
       そのうち消えるかもしれないし、教授が突然デザインを変えるかもしれません。<br>
       でも今日見てくれたあなたとは、一期一会のご縁です。ごゆるりとどうぞ。
       </p>
@@ -209,7 +236,7 @@
       <p>横田蓮<br>メール:yokota.ren.0912@gmail.com</p>
       <p>通称：居室ヒキニート　よく学校に泊まっている。 
       <p>インスタグラム:orengeren.y<p>
-        <p>好きな役:混一色。あとよく鳴く<p>
+        <p>好きな役：混一色。あとよく鳴く<p>
       <img src="student2.jpg" alt="学生2">
       <p>林田大河<br>メール: </p>
       <p>インスタグラム:rindaman_0105<p>
@@ -267,8 +294,11 @@
       const tile = tileList[randomIndex];
       tileDiv.innerHTML = `<img src="${tile}" alt="牌"><p>これがあなたのラッキー牌です！</p>`;
       tileDiv.style.display = "block";
+      const lightning = document.getElementById("lightning");
+  lightning.style.display = "block"; 
       setTimeout(() => {
         tileDiv.style.display = "none";
+        lightning.style.display = "none";
       }, 8000);
     }
 
